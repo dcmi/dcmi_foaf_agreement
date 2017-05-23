@@ -1,0 +1,11 @@
+<p>
+The <code>foaf:geekcode</code> property is used to represent a 'Geek Code' for some 
+<code>foaf:Person</code>. 
+</p>
+
+<p>
+See the <a href="http://en.wikipedia.org/wiki/Geek_Code">Wikipedia entry</a> for 
+details of the code, which provides a somewhat frivolous and willfully obscure mechanism for 
+characterising technical expertise, interests and habits. The <code>foaf:geekcode</code> 
+property is not bound to any particular version of the code. 
+</p>

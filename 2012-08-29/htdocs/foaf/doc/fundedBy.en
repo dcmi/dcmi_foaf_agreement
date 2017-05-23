@@ -1,0 +1,7 @@
+<p>
+The <code>foaf:fundedBy</code> property relates something to something else that has provided funding for it.
+</p>
+
+<p class="editorial">
+This property is tentatively considered <em>archaic usage</em>, unless we hear about positive implementation experience.
+</p>

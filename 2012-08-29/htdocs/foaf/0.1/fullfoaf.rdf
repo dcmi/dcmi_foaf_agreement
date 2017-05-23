@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+	xmlns:owl="http://www.w3.org/2002/07/owl#" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" >
+
+<!-- 	FOAF Vocabulary Description, Unexpurgated Edition
+
+ 	The following statements capture the intent behind the terms in FOAF, 
+	but do not fit well with the formal semantics of OWL DL. The idea here 
+	is that the claims can live in a separate document, allowing OWL DL tools
+	to consult the core namespace document safely. We may well put RDF Rule 
+	language appendices alongside these docs too; linked together with rdfs:seeAlso
+	so that more adventurous tools can find them. Specifically, OWL DL does not 
+	like you to say that DatatypeProperty is an InverseFunctionalProperty. So we 
+	say that last bit here instead of in the main index.rdf document.
+
+	Feedback on this design welcomed on rdfweb-dev@vapours.rdfweb.org 	-->
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/mbox_sha1sum" 
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/jabberID" 
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+ 
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/aimChatID" 
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/icqChatID" 
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/yahooChatID"
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/msnChatID" 
+		rdf:type ="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/sha1" /> <!-- ifp-ness discussed -->
+  <!-- rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty" -->
+
+  <!-- 	http://esw.w3.org/topic/PropertiesForNaming 
+	re Q: is foaf:name subpropertyof rdfs:label 				-->
+  <!-- 	Do generic RDF browsers use this? Yup... 
+	http://www.xml.com/pub/a/2003/02/05/brownsauce.html		
+	"""But since labels aren't that common outside schema documents, 
+	BrownSauce also treats 	properties as labels if they are subproperties of rdfs:label."""
+										-->
+
+  <rdf:Property rdf:about="http://xmlns.com/foaf/0.1/name">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+  </rdf:Property>
+
+  <!-- $Id: fullfoaf.rdf,v 1.3 2005-07-27 23:38:59 danbri Exp $ -->
+
+</rdf:RDF>

@@ -1,0 +1,12 @@
+<p>
+The <code>foaf:lastName</code> property is provided (alongside <code>foaf:firstName</code>) as a mechanism to support legacy data that cannot be
+easily interpreted in terms of the (otherwise preferred) <code>foaf:familyName</code> and <code>foaf:givenName</code> properties. The concepts 
+of 'first' and 'last' names do not work well across cultural and linguistic boundaries; however they are widely used in addressbooks and databases.
+</p>
+<p>
+See the <a href="http://wiki.foaf-project.org/w/NameVocabIssue">issue tracker</a> for design discussions, status and ongoing work on rationalising the FOAF 
+naming machinery.
+</p>
+<p>
+There is also a simple <code>foaf:name</code> property.
+</p>

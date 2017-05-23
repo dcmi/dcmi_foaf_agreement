@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dct="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/">
+<head>
+  <title>FOAF Vocabulary Specification</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link href="http://xmlns.com/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link href="style.css" rel="stylesheet"  type="text/css" />
+  <link href="http://xmlns.com/foaf/spec/index.rdf" rel="alternate"  type="application/rdf+xml" />
+</head>
+
+<body>
+  <h1>FOAF Vocabulary Specification 0.98<br /></h1>
+
+  <h2>Namespace Document 9 August 2010 - <em>Marco Polo Edition</em></h2>
+
+  <dl>
+    <dt>This version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/20100809.html">http://xmlns.com/foaf/spec/20100809.html</a> (<a href="20100809.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100809">wiki</a>)</dd>
+
+    <dt>Latest version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a> (<a href="index.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/">wiki</a>)</dd>
+
+    <dt>Previous version:</dt>
+    <dd><a href="http://xmlns.com/foaf/spec/20100101.html">http://xmlns.com/foaf/spec/20100101.html</a> (<a  href="20100101.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100101.html">wiki</a>)</dd>
+    <dt>Authors:</dt>
+    <dd><a href="mailto:danbri@danbri.org">Dan Brickley</a>,
+    <a href="mailto:libby@nicecupoftea.org">Libby Miller</a></dd>
+
+    <dt>Contributors:</dt>
+
+    <dd>Members of the FOAF mailing list (<a href=
+    "http://lists.foaf-project.org/">foaf-dev@lists.foaf-project.org</a>)
+    and the wider <a href="http://www.w3.org/2001/sw/interest/">RDF
+    and Semantic Web developer community</a>. See <a href=
+    "#sec-ack">acknowledgements</a>.</dd>
+  </dl>
+
+  <p class="copyright">Copyright &#169; 2000-2010 Dan Brickley and Libby Miller</p>
+  <div about=""  resource="http://www.w3.org/TR/rdfa-syntax"  rel="dct:conformsTo" />
+  <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"   alt="Valid XHTML + RDFa"  /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "somerights.gif" /></a> This work is licensed under a <a  rel="license" href= 
+  "http://creativecommons.org/licenses/by/1.0/">Creative Commons Attribution License</a>. This copyright applies to the <em>FOAF Vocabulary Specification</em> and accompanying documentation in RDF. Regarding underlying technology, FOAF uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
+  
+  <hr />
+
+
+<h2 id="sec-status">Abstract</h2>
+
+<p>
+This specification describes the FOAF language, defined as a dictionary of named properties and classes using W3C's RDF technology.  
+</p>
+
+<p>
+FOAF is a project devoted to linking people and information using the Web. Regardless of whether information is in people's heads, in physical or digital documents, or in the form of factual data, it can be linked. FOAF integrates three kinds of network: <em>social networks</em> of human collaboration, friendship and association; <em>representational networks</em> that describe a simplified view of a cartoon universe in factual terms, and <em>information networks</em> that use Web-based linking to share independently published descriptions of this inter-connected world. FOAF does not compete with socially-oriented Web sites; rather it provides an approach in which different sites can tell different parts of the larger story, and by which users can retain some control over their information in a non-proprietary format. 
+</p>
+
+  <div class="status">
+    <h2>Status of This Document</h2>
+
+    <p>
+FOAF has been evolving gradually since its creation in mid-2000. There is now a stable core of classes and properties 
+that will not be changed, beyond modest adjustments to their documentation to track implementation feedback and emerging best practices. New terms may be 
+added at any time (as with a natural-language dictionary),  and consequently this specification 
+is an evolving work. The FOAF RDF namespace URI, by contrast, is fixed and its identifier is not expected to <a href="#sec-evolution">change</a>. Furthermore, efforts are 
+underway to ensure the long-term preservation of the FOAF namespace, its xmlns.com domain name and associated documentation.
+</p>
+
+<p>
+The FOAF specification is produced as part of the <a href="http://www.foaf-project.org/">FOAF project</a>, to provide authoritative documentation of the contents, status and purpose of the RDF/XML vocabulary and document formats known informally as 'FOAF'.</p>
+
+<p>This document is created by combining the <a href="index.rdf">RDFS/OWL</a> machine-readable FOAF ontology with a set of <a href="../doc/">per-term</a> documents. Future versions may incorporate <a href="http://svn.foaf-project.org/foaftown/foaf18n/">multilingual translations</a> of the term definitions. An RDF/XML encoding of the specification is available by <a href="index.rdf">direct link</a> or by HTTP <a href="http://wiki.foaf-project.org/w/Conneg">content negotiation</a> from the <a href="http://xmlns.com/foaf/0.1/">namespace URI</a>. The HTML specification no longer embeds the RDF/XML markup; however an experimental subset of the RDF is included in this document using RDFa notation.</p>
+
+    <p>The authors welcome comments on this document, preferably via the public FOAF developers list <a href=
+    "mailto:foaf-dev@lists.foaf-project.org">foaf-dev@lists.foaf-project.org</a>;
+    <a href="http://lists.foaf-project.org">public archives</a> are
+    available. A historical backlog of known technical issues is acknowledged, and available for discussion in the 
+    <a href="http://wiki.foaf-project.org/w/IssueTracker">FOAF wiki</a>. Proposals for resolving these issues are welcomed, 
+    either on foaf-dev or via the wiki. Further work is also needed on the explanatory text in this specification and on the 
+    <a href="http://www.foaf-project.org/">FOAF website</a>; progress towards this will be measured in the version number of 
+    future revisions to the FOAF specification.
+   </p>
+
+
+<h3>Changes in version 0.98</h3>
+
+<p>This revision introduces the new <a href="#term_focus">foaf:focus</a> term, fixes a few long-standing editorial bugs, and makes some largely predictable changes to the 'status' of various terms. Some older text has been archived to the Wiki. New overview text has been added, which attempts to present more clearly the general approach, design and philosophy of the project. The 'at a glance' has been simplified, and now shows 'core' and 'social Web' groupings from FOAF's most widely used terms. Consumers of the machine-readable version should note that some disjointness and rdfs:domain claims have been relaxed, as detailed below; also that the values of the foaf:logo property are now considered uniquely identifying.
+</p>
+
+<p>See the <a href="#sec-changes">changes</a> section for more detailed change-log information.</p>
+
+
+  <h2 id="sec-toc">Table of Contents</h2>
+
+  <ul>
+    <li><a href="#sec-glance">FOAF at a glance</a></li>
+    <li><a href="#sec-intro">Introduction</a></li>
+    <li><a href="#sec-sw">The Semantic Web</a></li>
+    <li><a href="#sec-foafsw">FOAF and the Semantic Web</a></li>
+    <li><a href="#sec-for">What's FOAF for?</a></li>
+    <li><a href="#sec-bg">Background</a></li>
+    <li><a href="#sec-standards">FOAF and Standards</a></li>
+    <li><a href="#sec-evolution">Evolution and Extension of FOAF</a></li>
+    <li><a href="#sec-autodesc">FOAF Auto-Discovery: Publishing and Linking FOAF files</a></li>
+    <li><a href="#sec-foafandrdf">FOAF and RDF</a></li>
+    <li><a href="#sec-crossref">FOAF cross-reference: Listing FOAF Classes and Properties</a></li>
+    <li><a href="#sec-extrefs">External Vocabulary References</a></li>
+    <li><a href="#sec-ack">Acknowledgments</a></li>
+    <li><a href="#sec-changes">Recent Changes</a></li>
+  </ul>
+
+
+  <a id="sec-glance"></a>
+  <h2 id="glance">FOAF at a glance</h2>
+
+  <p>FOAF describes the world using simple ideas inspired by the Web. In FOAF descriptions, there are only various kinds of
+	things and links, which we call <em>properties</em>. The types of the things we talk about in FOAF are called <em>classes</em>.
+	FOAF is therefore defined as a dictionary of terms, each of which is either a <em>class</em> or a <em>property</em>. Other 
+	projects alongside FOAF provide other sets of classes and properties, many of which are linked with those defined in FOAF. </p>
+
+	<p>FOAF descriptions are themselves published as linked documents in the Web (eg. using RDF/XML or RDFa syntax). The result of the FOAF project is a network of documents describing a network of people (and other stuff). Each FOAF document is itself an encoding of a descriptive network structure. Although these documents do not always agree or tell the truth, they have the useful 
+		characteristic that they can be easily merged, allowing partial and decentralised descriptions to be combined in interesting ways.
+	</p> 
+
+  <p>
+  	FOAF collects a variety of terms; some describe people, some groups, some documents. Different kinds of application can use or ignore different parts of FOAF. The overview here shows one way of viewing FOAF terms: we ignore archaic and historical parts, and 
+divide the rest into terms that only make sense on the Web, and those that have universal applicability when linking people and information.
+  </p>
+    <p>Main FOAF terms, grouped in broad categories.</p>
+
+<ul>
+	<li><strong>Core</strong> - 
+      These classes and properties form the core of FOAF. They describe characteristics of people and social groups 
+	that are independent of time and technology; as such they can be used to describe basic information about people in 
+	present day, historical, cultural heritage and digital library contexts. In addition to various characteristics of 
+	people, FOAF defines classes for Project, Organization and Group as other kinds of agent. Related work: <a href="http://www.dublincore.org/">Dublin Core</a>, <a href="http://www.w3.org/2004/02/skos/">SKOS</a>, <a href="http://trac.usefulinc.com/doap">DOAP</a>, <a href="http://sioc-project.org/">SIOC</a>, <a href="http://www.epimorphics.com/public/vocabulary/org.html">Org vocabulary</a>, <a href="http://vocab.org/bio/0.1/.html">Bio vocabulary</a>.
+	</li> 
+   
+	<li><strong>Social Web</strong> - in addition to the FOAF core terms, there are a number of terms for use when describing Internet accounts, addressbooks and other Web-based activities. Related work: <a href="http://portablecontacts.net/">Portable Contacts</a>, <a href="http://www.w3.org/2005/Incubator/socialweb/">W3C Social Web group</a>.</li>
+<li><strong>Linked Data utilities</strong> - FOAF began as the 'RDFWeb' project, and established a widely adopted model for publishing simple factual data via a networked of linked RDF documents. FOAF remains important to the growing "Linked Data" community, while also maintaining a concern for information that is not readily summarised as simple factual data. FOAF is an attempt to use the Web to integrate factual information with information in human-oriented documents (eg. videos, books, spreadsheets, 3d models), as well as information that is still in people's heads. This history explains why FOAF includes a few 'demonstration' terms that served largely educational purposes (eg. <a href="#term_geekcode">geekcode</a>), alongside a few technical utility terms (eg. <a href="#term_focus">focus</a>, <a href="#term_LabelProperty">LabelProperty</a>) that support wider information-linking efforts. The dictionary-based design of FOAF allows a certain pragmatism: we simply record here a set of terms that are useful to the Web community, while keeping an emphasis on the central idea of FOAF, which is about linking networks of information with networks of people.
+</li>
+</ul>
+
+    <div class="rdf-proplist">
+      <h3>FOAF Core</h3>
+<ul>
+ <li> 
+  <ul>
+   <li><a href="#term_Agent">Agent</a></li>
+   <li><a href="#term_Person">Person</a></li>
+   <li><a href="#term_name">name</a></li>
+   <li><a href="#term_title">title</a></li>
+   <li><a href="#term_img">img</a></li>
+   <li><a href="#term_depiction">depiction</a> (<a href="#term_depicts">depicts</a>)</li>
+   <li><a href="#term_familyName">familyName</a></li>
+   <li><a href="#term_givenName">givenName</a></li>
+   <li><a href="#term_knows">knows</a></li>
+   <li><a href="#term_based_near">based_near</a></li>
+   <li><a href="#term_age">age</a></li>
+   <li><a href="#term_made">made</a> (<a href="#term_maker">maker</a>)</li>
+   <li><a href="#term_primaryTopic">primaryTopic</a> (<a href="#term_isPrimaryTopicOf">primaryTopicOf</a>)</li>
+  </ul>
+ </li>
+ <li>
+  <ul>
+   <li><a href="#term_Project">Project</a></li>
+   <li><a href="#term_Organization">Organization</a></li>
+   <li><a href="#term_Group">Group</a></li>
+   <li><a href="#term_member">member</a></li>
+  </ul>
+ </li>
+ <li>
+  <ul> 
+   <li><a href="#term_Document">Document</a></li>
+   <li><a href="#term_Image">Image</a></li>
+  </ul> 
+ </li>
+ </ul> 
+</div>
+</div>
+    <div class="rdf-proplist">
+      <h3>Social Web</h3>
+      <ul>
+        <li><a href="#term_nick">nick</a></li>
+        <li><a href="#term_mbox">mbox</a></li>
+        <li><a href="#term_homepage">homepage</a></li>
+        <li><a href="#term_weblog">weblog</a></li>
+        <li><a href="#term_openid">openid</a></li>
+        <li><a href="#term_jabberID">jabberID</a></li>
+        <li><a href="#term_mbox_sha1sum">mbox_sha1sum</a></li>
+        <li><a href="#term_interest">interest</a></li>
+        <li><a href="#term_topic_interest">topic_interest</a></li>
+        <li><a href="#term_topic">topic</a> (<a href="#term_page">page</a>)</li>
+        <li><a href="#term_workplaceHomepage">workplaceHomepage</a></li>
+        <li><a href="#term_workInfoHomepage">workInfoHomepage</a></li>
+        <li><a href="#term_schoolHomepage">schoolHomepage</a></li>
+        <li><a href="#term_publications">publications</a></li>
+        <li><a href="#term_currentProject">currentProject</a></li>
+        <li><a href="#term_pastProject">pastProject</a></li>
+        <li><a href="#term_account">account</a></li>
+        <li><a href="#term_OnlineAccount">OnlineAccount</a></li>
+        <li><a href="#term_accountName">accountName</a></li>
+        <li><a href="#term_accountServiceHomepage">accountServiceHomepage</a></li>
+        <li><a href="#term_PersonalProfileDocument">PersonalProfileDocument</a></li>
+        <li><a href="#term_tipjar">tipjar</a></li>
+        <li><a href="#term_sha1">sha1</a></li>
+        <li><a href="#term_thumbnail">thumbnail</a></li>
+        <li><a href="#term_logo">logo</a></li>
+      </ul>
+    </div>
+
+  <div style="clear: left;"></div>
+
+
+ <h3>A-Z of FOAF terms (current and archaic)</h3>
+ <p>This is a complete alphabetical A-Z index of <strong>all</strong> FOAF terms, by class (categories or types) and by property. Note that it includes 'archaic' terms that are largely of historical interest.</p>
+ 
+ %s
+
+  <h2 id="sec-example">Example</h2>
+
+  <p>Here is a very basic document describing a person:</p>
+
+  <div class="example">
+    <pre>
+&lt;foaf:Person rdf:about="#danbri" xmlns:foaf="http://xmlns.com/foaf/0.1/"&gt;
+  &lt;foaf:name&gt;Dan Brickley&lt;/foaf:name&gt;
+  &lt;foaf:homepage rdf:resource="http://danbri.org/" /&gt;
+  &lt;foaf:openid rdf:resource="http://danbri.org/" /&gt;
+  &lt;foaf:img rdf:resource="/images/me.jpg" /&gt;
+&lt;/foaf:Person&gt;
+</pre>
+  </div>
+
+  <p>This brief example introduces the basics of FOAF. It basically
+  says, "there is a <a href="#term_Person">foaf:Person</a> with a
+  <a href="#term_name">foaf:name</a> property of 'Dan Brickley';
+    this person stands in <a href="#term_homepage">foaf:homepage</a> and <a href="#term_openid">foaf:openid</a> 
+    relationship to a thing called http://danbri.org/ and a <a href=
+  "#term_img">foaf:img</a> relationship to a thing referenced by a relative URI of /images/me.jpg</p>
+
+  <div style="clear: left;"></div>
+
+
+  <!-- ================================================================== -->
+
+
+ <h2 id="sec-intro">1 Introduction: FOAF Basics</h2>
+
+  <h3 id="sec-sw">The Semantic Web</h3>
+<blockquote>
+<p>
+<em>
+  To a computer, the Web is a flat, boring world, devoid of meaning. 
+  This is a pity, as in fact documents on the Web describe real objects and 
+  imaginary concepts, and give particular relationships between them. For 
+  example, a document might describe a person. The title document to a house describes a house and also the ownership relation 
+  with a person. Adding semantics to the Web involves two things: allowing documents which have information 
+  in machine-readable forms, and allowing links to be created with relationship 
+  values. Only  when we have this extra level of semantics will we be able to use computer power 
+  to help us exploit the information to a greater extent than our own reading.
+</em>
+- Tim Berners-Lee &quot;<a href="http://www.w3.org/Talks/WWW94Tim/">W3 future directions</a>&quot; keynote, 1st World Wide Web Conference Geneva, May 1994
+</p>
+</blockquote>
+
+
+<blockquote>
+	<p><em>I express my network in a FOAF file, and that is a start of the revolution.</em> - TimBL 2007, <a href="http://dig.csail.mit.edu/breadcrumbs/node/215">Giant Global Graph</a> (<a href="http://www.w3.org/People/Berners-Lee/card">foaf</a>)
+</p>
+</blockquote>
+
+<p>
+FOAF is a project devoted to linking people and information using the Web. Regardless of whether information is in people's heads, in physical or digital documents, or in the form of factual data, it can be linked. FOAF integrates three kinds of network: <em>social networks</em> of human collaboration, friendship and association; <em>representational networks</em> that describe a simplified view of a cartoon universe in factual terms, and <em>information networks</em> that use Web-based linking to share independently published descriptions of this inter-connected world. FOAF does not compete with socially-oriented Web sites; rather it provides an approach in which different sites can tell different parts of the larger story, and through which users can retain some control over their information in a non-proprietary format. 
+</p>
+
+
+<h3 id="sec-foafsw">FOAF and the Semantic Web</h3>
+
+<p>
+FOAF, like the Web itself, is a linked information system. It is built using decentralised <a 
+href="http://www.w3.org/2001/sw/">Semantic Web</a> technology, and has been designed to allow for integration of data across 
+a variety of applications, Web sites and services, and software systems. To achieve this, FOAF takes a liberal approach to data 
+exchange. It does not require you to say anything at all about yourself or others, nor does it place any limits on the things you can 
+say or the variety of Semantic Web vocabularies you may use in doing so. This current specification provides a basic "dictionary" of 
+terms for talking about people and the things they make and do.</p>
+
+<p>FOAF was designed to be used alongside other such dictionaries ("schemas" or "ontologies"), and to be usable with the wide variety 
+of generic tools and services that have been created for the Semantic Web. For example, the W3C work on <a 
+href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL</a> provides us with a rich query language for consulting databases of FOAF data, 
+while the <a href="http://www.w3.org/2004/02/skos/">SKOS</a> initiative explores in more detail than FOAF the problem of describing 
+topics, categories, "folksonomies" and subject hierarchies. Meanwhile, other W3C groups are working on improved mechanisms for encoding 
+all kinds of RDF data (including but not limited to FOAF) within Web pages: see the work of the <a 
+href="http://www.w3.org/2001/sw/grddl-wg/">GRDDL</a> and <a href="http://www.w3.org/TR/xhtml-rdfa-primer/">RDFa</a> efforts for more 
+detail. The Semantic Web provides us with an <em>architecture for collaboration</em>, allowing complex technical challenges to be 
+shared by a loosely-coordinated community of developers. 
+</p>
+
+  <p>The FOAF project is based around the use of <em>machine
+  readable</em> Web homepages for people, groups, companies and
+  other kinds of thing. To achieve this we use the "FOAF
+  vocabulary" to provide a collection of basic terms that can be
+  used in these Web pages. At the heart of the FOAF project is a
+  set of definitions designed to serve as a dictionary of terms
+  that can be used to express claims about the world. The initial
+  focus of FOAF has been on the description of people, since people
+  are the things that link together most of the other kinds of
+  things we describe in the Web: they make documents, attend
+  meetings, are depicted in photos, and so on.</p>
+
+  <p>The FOAF Vocabulary definitions presented here are written
+  using a computer language (RDF/OWL) that makes it easy for
+  software to process some basic facts about the terms in the FOAF
+  vocabulary, and consequently about the things described in FOAF
+  documents. A FOAF document, unlike a traditional Web page, can be
+  combined with other FOAF documents to create a unified database
+  of information. FOAF is a <a 
+  href="http://www.w3.org/DesignIssues/LinkedData.html">Linked 
+  Data</a> system, in that it based around the idea of linking together 
+  a Web of decentralised descriptions.</p>
+
+
+  <h3 id="sec-basicidea">The Basic Idea</h3>
+
+  <p>The basic idea is pretty simple. If people publish information
+  in the FOAF document format, machines will be able to make use of
+  that information. If those files contain "see also" references to
+  other such documents in the Web, we will have a machine-friendly
+  version of today's hypertext Web. Computer programs will be able
+  to scutter around a Web of documents designed for machines rather
+  than humans, storing the information they find, keeping a list of
+  "see also" pointers to other documents, checking digital
+  signatures (for the security minded) and building Web pages and
+  question-answering services based on the harvested documents.</p>
+
+  <p>So, what is the 'FOAF document format'? FOAF files are just
+  text documents (well, Unicode documents). They adopt the conventions 
+  of the Resource Description Framework (RDF), and may be written in XML 
+  syntax or any other of the syntaxes of RDF such as RDFa or N3. 
+  In addition, the FOAF vocabulary defines some
+  useful constructs that can appear in FOAF files, alongside other
+  RDF vocabularies defined elsewhere. For example, FOAF defines
+  categories ('classes') such as <code>foaf:Person</code>,
+  <code>foaf:Document</code>, <code>foaf:Image</code>, alongside
+  some handy properties of those things, such as
+  <code>foaf:name</code>, <code>foaf:mbox</code> (ie. an internet
+  mailbox), <code>foaf:homepage</code> etc., as well as some useful
+  kinds of relationship that hold between members of these
+  categories. For example, one interesting relationship type is
+  <code>foaf:depiction</code>. This relates something (eg. a
+  <code>foaf:Person</code>) to a <code>foaf:Image</code>. The FOAF
+  demos that feature photos and listings of 'who is in which
+  picture' are based on software tools that parse RDF documents and
+  make use of these properties.</p>
+
+  <p>The specific contents of the FOAF vocabulary are detailed in
+  this <a href="http://xmlns.com/foaf/0.1/">FOAF namespace
+  document</a>. In addition to the FOAF vocabulary, one of the most
+  interesting features of a FOAF file is that it can contain "see
+  Also" pointers to other FOAF files. This provides a basis for
+  automatic harvesting tools to traverse a Web of interlinked
+  files, and learn about new people, documents, services,
+  data...</p>
+
+  <p>The remainder of this specification describes how to publish
+  and interpret descriptions such as these on the Web, using
+  RDF/XML for syntax (file format) and terms from FOAF. It
+  introduces a number of categories (RDF classes such as 'Person')
+  and properties (relationship and attribute types such as 'mbox'
+  or 'workplaceHomepage'). Each term definition is provided in both
+  human and machine-readable form, hyperlinked for quick
+  reference.</p>
+
+  <h2 id="sec-for">What's FOAF for?</h2>
+
+  <p>For an early general introduction to FOAF, see Edd Dumbill's
+  article, <a href=
+  "http://www-106.ibm.com/developerworks/xml/library/x-foaf.html">XML
+  Watch: Finding friends with XML and RDF</a> (June 2002, IBM
+  developerWorks). Information about the use of FOAF <a href=
+  "http://rdfweb.org/2002/01/photo/">with image metadata</a> is
+  also available.</p>
+
+  <p>The <a href= "http://rdfweb.org/2002/01/photo/">co-depiction</a>
+  experiment shows a fun use of the vocabulary. To create a FOAF document, you can use Leigh Dodd's
+  <a href=
+  "http://www.ldodds.com/foaf/foaf-a-matic.html">FOAF-a-matic</a>
+  javascript tool. For more information on
+  FOAF and related projects, see the <a href=
+  "http://www.foaf-project.org">FOAF project home page</a> and the <a href="http://wiki.foaf-project.org/w/">FOAF Wiki</a>.
+</p>
+
+  <h2 id="sec-bg">Background</h2>
+
+  <p>FOAF is a collaborative effort amongst developers on the FOAF (foaf-dev@lists.foaf-project.org) mailing
+  list. The name 'FOAF' is derived from traditional internet usage, an acronym for 'Friend of a Friend'.</p>
+
+  <p>The name was chosen to reflect our concern with social
+  networks and the Web, urban myths, trust and connections. Other
+  uses of the name continue, notably in the documentation and
+  investigation of Urban Legends (eg. see the <a href=
+  "http://www.urbanlegends.com/">alt.folklore.urban archive</a> or
+  <a href="http://www.snopes.com/">snopes.com</a>), and other FOAF
+  stories. Our use of the name 'FOAF' for a Web vocabulary and
+  document format is intended to complement, rather than replace,
+  these prior uses. FOAF documents describe the characteristics and
+  relationships amongst friends of friends, and their friends, and
+  the stories they tell.</p>
+
+  <h2 id="sec-standards">FOAF and Standards</h2>
+
+  <p>It is important to understand that the FOAF
+  <em>vocabulary</em> as specified in this document is not a
+  standard in the sense of <a href=
+  "http://www.iso.ch/iso/en/ISOOnline.openerpage">ISO
+  Standardisation</a>, or that associated with <a href=
+  "http://www.w3.org/">W3C</a> <a href=
+  "http://www.w3.org/Consortium/Process/">Process</a>.</p>
+
+  <p>FOAF depends heavily on W3C's standards work, specifically on
+  XML, XML Namespaces, RDF, and OWL. All FOAF <em>documents</em>
+  must be well-formed RDF documents. The FOAF vocabulary, by
+  contrast, is managed more in the style of an <a href=
+  "http://www.opensource.org/">Open Source</a> or <a href=
+  "http://www.gnu.org/philosophy/free-sw.html">Free Software</a>
+  project than as an industry standardarisation effort (eg. see
+  <a href="http://www.jabber.org/jeps/jep-0001.html">Jabber
+  JEPs</a>).</p>
+
+  <p>This specification contributes a vocabulary, "FOAF", to the
+  Semantic Web, specifying it using W3C's <a href=
+  "http://www.w3.org/RDF/">Resource Description Framework</a>
+  (RDF). As such, FOAF adopts by reference both syntaxes (using
+  XML, N3, or RDFa) a data model (RDF graphs) and a mathematically grounded
+  definition for the rules that underpin the FOAF design.</p>
+
+  <h2 id="sec-nsdoc">The FOAF Vocabulary Description</h2>
+
+  <p>This specification serves as the FOAF "namespace document". As
+  such it describes the FOAF vocabulary 
+ the terms (<a href=
+  "http://www.w3.org/RDF/">RDF</a> classes and properties) that
+  constitute it, so that <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> applications can
+  use those terms in a variety of RDF-compatible document formats
+  and applications.</p>
+
+  <p>This document presents FOAF as a <a href=
+  "http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or
+  <em>Ontology</em>. The FOAF vocabulary is pretty simple,
+  pragmatic and designed to allow simultaneous deployment and
+  extension. FOAF is intended for widescale use, but its authors
+  make no commitments regarding its suitability for any particular
+  purpose.</p>
+
+  <h3 id="sec-evolution">Evolution and Extension of FOAF</h3>
+
+  <p>The FOAF vocabulary is identified by the namespace URI
+  '<code>http://xmlns.com/foaf/0.1/</code>'. Revisions and
+  extensions of FOAF are conducted through edits to this document,
+  which by convention is accessible in the Web via the namespace URI.
+  For practical and deployment reasons, note that <b>we do not 
+  update the namespace URI as the vocabulary matures</b>.
+  </p>
+  <p>Much of FOAF now is considered stable. Each release of this
+  specification document has an incrementally increased version number, even while the 
+  technical namespace ID remains fixed and includes the original value of "0.1".
+  It long ago became impractical to update the namespace URI without 
+  causing huge disruption to both producers and consumers of FOAF 
+  data. We are left with the digits "0.1" in our URI. This 
+  stands as a warning to all those who might embed metadata in their 
+  vocabulary identifiers.
+</p>
+
+<p>
+  The evolution of FOAF is best considered in terms of the
+  stability of individual vocabulary terms, rather than the
+  specification as a whole. As terms stabilise in usage and
+  documentation, they progress through the categories
+  '<strong>unstable</strong>', '<strong>testing</strong>' and
+  '<strong>stable</strong>'. Older terms are marked '<strong>archaic</strong>' which allows the possibility of older forms to become modern again.</p><!--STATUSINFO-->
+
+  <p>The properties and types defined here provide some basic
+  useful concepts for use in FOAF descriptions. Other vocabulary
+  (eg. the <a href="http://dublincore.org/">Dublin Core</a>
+  metadata elements for simple bibliographic description), RSS 1.0
+  etc can also be mixed in with FOAF terms, as can local
+  extensions. FOAF is designed to be extended. The <a href=
+  "http://wiki.foaf-project.org/w/FoafVocab">FoafVocab</a> page in the
+  FOAF wiki lists a number of extension vocabularies that are
+  particularly applicable to use with FOAF.</p>
+
+  <h2 id="sec-autodesc">FOAF Auto-Discovery: Publishing and Linking FOAF files</h2>
+
+  <p>If you publish a FOAF self-description (eg. using <a href=
+  "http://www.ldodds.com/foaf/foaf-a-matic.html">foaf-a-matic</a>)
+  you can make it easier for tools to find your FOAF by putting
+  markup in the <code>head</code> of your HTML homepage. It doesn't
+  really matter what filename you choose for your FOAF document,
+  although <code>foaf.rdf</code> is a common choice. The linking
+  markup is as follows:</p>
+
+  <div class="example">
+<pre>
+  &lt;link rel="meta" type="application/rdf+xml" title="FOAF"
+               href="<em>http://example.com/~you/foaf.rdf</em>"/&gt;
+</pre>
+  </div>
+
+  <p>...although of course change the <em>URL</em> to point to your
+  own FOAF document. See also: more on <a href=
+  "http://web.archive.org/web/20040416181630/rdfweb.org/mt/foaflog/archives/000041.html">FOAF
+  autodiscovery</a> and services that make use of it.</p>
+
+  <h2 id="sec-foafandrdf">FOAF and RDF</h2>
+  
+<p>For information about why FOAF uses RDF, see the <a href="http://wiki.foaf-project.org/w/FOAFandRDF">FOAFandRDF</a> wiki entry.</p>
+
+  <h2 id="sec-crossref">FOAF cross-reference: Listing FOAF Classes and
+  Properties</h2>
+
+  <p>FOAF introduces the following classes and properties. A machine-friendly version is also available in <a href="index.rdf">RDF/XML</a>.</p>
+
+  <!-- the following is the script-generated list of classes and properties -->
+ 
+
+<!-- this is the a-z listing -->
+%s
+
+<!-- and this is the bulk of the vocab descriptions -->
+%s
+
+
+<h2 id="sec-extrefs">External Vocabulary References</h2>
+
+<p>
+The description of the terms in the FOAF 'dictionary' often make reference to classes and properties elsewhere. This section of the FOAF specification provides a placeholder reference for any FOAF mention of externally defined terms. For example, sometimes we might say that FOAF property has a domain or range of an externally defined class, or that a FOAF class is a sub-class of an external class, or 'disjoint with' such a class (ie. has no common members). Such claims help fix the intended meaning of FOAF terms in relationship to other 'peer' vocabularies. 
+</p>
+
+
+<h3 id="extns_status">Status Vocabulary</h3>
+
+<p>
+Each term in FOAF is annotated with properties from the <a href="http://www.w3.org/2003/06/sw-vocab-status/note">SemWeb Vocab Status Ontology</a>
+</p>
+
+<p>
+This was created as an experiment in documenting FOAF's term-centric versioning model, in which a common fixed namespace URI is used, while term definitions slowly and independently evolve through different stability levels. This contrasts with other approaches to versioning which attach versioning information to larger sets of terms.
+</p>
+<p>
+Note that this mechanism is itself somewhat experimental and evolvin. The definitions of 'stable', 'unstable', 'archaic' and 'testing' cannot be defined as global absolutes, but only in relationship to the practices, expectations and social structures around some vocabulary. For their use in FOAF, future versions of this specification could usefully offer more detail about what to expect from a term labelled 'stable'. 
+ </p>
+
+<dl>
+<dt>vs:term_status</dt>
+<dd>The vs:term_status property indicates the status of a vocabulary term, one of 'stable','unstable','testing' or 'archaic'. </dd>
+</dl>
+
+
+<div id="term_SpatialThing"/>
+<h3 id="extns_w3cbasicgeo">W3C Basic Geo (WGS84 lat/long) Vocabulary</h3>
+
+<p>Members of the FOAF and W3C Semantic Web Interest Group communities collaborated in 2003 to create a very simple vocabulary that described 
+points in geographic space. This is the <a href="http://www.w3.org/2003/01/geo/">W3CBasic Geo Vocabulary</a>. It assumes use of the WGS84 reference
+system and defines properties geo:lat, geo:long and geo:alt in terms of a class geo:SpatialThing.
+</p>
+
+<p>
+The <a href="#term_based_near">foaf:based_near</a> property relates a spatial thing (typically a foaf:Agent of some kind) to another spatial thing,
+which can be described using geo:lat, geo:long etc.
+</p>
+
+<h3 id="extns_w3ccore">RDF Vocabulary Description - core concepts</h3>
+
+<p>
+The FOAF dictionary of terms is defined using a family of W3C standards: RDF, RDF Schema and OWL. These share a data model and general approach, and 
+provide for increasing levels of expressivity. Here we introduce the core OWL and RDF/S terms used directly in the machine-readable description of FOAF. See 
+<a href="http://www.w3.org/2001/sw/">W3C's site</a> for the latest and most authoritative OWL and RDF specifications.
+</p>
+
+<p>
+FOAF is based on the exchange of free-form descriptions that are structured in terms of things having properties, where the value of each property is 
+expressed as either textually (eg. a name or number), or by reference to another thing. FOAF (as an application of RDF) uses URI identifiers wherever 
+possible to talk about things of interest, whether they are Web pages, classes of thing, properties of things, or even people. See the W3C Web Architecture specification for <a href="http://www.w3.org/TR/webarch/#identification">more background on URIs</a>.
+</p>
+<p>
+From core RDF, FOAF takes the notion that we are talking about things, and they fall into categories; we call these 'classes'. The core machinery we 
+use from the RDF Schema and OWL technologies simply give us some built-in terminology for talking about things, classes and properties. Here we introduce
+some of these and discuss briefly how they relate to FOAF's approach to describing things.
+</p>
+
+<dl>
+<dt id="term_Thing">owl:Thing</dt>
+<dd>OWL introduces the class 'Thing' as a name for the universal class of all things. This is sometimes useful when
+we want to express universality of property use, eg. that anything can be the value of <a href="#term_depicts">foaf:depicts</a>.</dd>
+<dt>rdf:Property</dt>
+<dd>RDF has a built-in class called rdf:Property. This is the class of all things like foaf:homepage or dc:creator which define named kinds of 
+relationship between pairs of things, or between things and textually-expressed information.</dd>
+<dt>owl:DatatypeProperty</dt>
+<dd>The OWL specifications give a name for those properties whose values are textually-expressed: "DataTypeProperty". RDF allows these to be either plain literal values (these can also carry an indicator of their language, via xml:lang), or else "data-typed", which means they are marked with a URI indicating 
+their type (but no language tagging).</dd>
+<dt>owl:ObjectProperty</dt>
+<dd>ObjectProperty is OWL's name for those properties which are not textually-expressed; instead, they are used when mentioning or referring to 
+some other thing. OWL encourages vocabularies to avoid using a single named property in both 'ObjectProperty' and 'DataTypeProperty' styles. However
+earlier usage, notably in the Dublin Core community, does just this. Each FOAF property is either an Object Property or DataType Property.
+</dd>
+<dt>rdf:type</dt>
+<dd>One of the most commonly used built-in relationships in RDF is 'type'. RDF type relates something to a class that it is in.</dd>
+<dt>rdfs:subClassOf</dt>
+<dd>RDFS gives a name for the relationship between some specific class and its more general superclass: 'subClassOf'. It would have perhaps been 
+simpler if this was called 'superProperty'. So for example we say that foaf:Person has an rdfs:subClassOf property whose value is foaf:Agent.
+</dd>
+
+
+<dt>rdfs:Class</dt>
+<dd>RDFS gives the name 'Class' to those things that represent classes of thing, ie. which are values of rdf:type for their members. The 
+OWL language also (for technical reasons) defines owl:Class for essentially the same notion. OWL also includes powerful machinery for defining the 
+membership rules for classes. This is not heavily used in FOAF, beyond the experimental mechanisms associated with foaf:Group.
+</dd>
+
+<dt>rdfs:subClassOf</dt>
+<dd>RDFS gives a name for the relationship between some particular class and its more general superclass: 'subClassOf'. It would have perhaps been 
+simpler if this was called 'superProperty'. So for example we say that foaf:Person has a subPropertyOf property whose value is foaf:Agent.
+</dd>
+
+
+<dt>rdfs:subPropertyOf</dt>
+<dd>Similar to subClassOf but for hierarchies of properties, we can use rdfs:subPropertyOf to point to a more general super-property, for example
+we say foaf:aimChatID rdfs:subPropertyOf foaf:nick.
+</dd>
+
+<dt>rdfs:domain</dt>
+<dd>The RDFS specification introduced the notion of a property's domain. This is a way of saying, for some property, something about the 
+kind of classes it is used with. If you know the domain or domains for some property, you know that whenever you see that property applied to something,
+then that thing ought to be a member of those classes. Note that this does not mean that every description using the property is compelled to mention
+all those classes, just that the meaning of the property implies also the type of the thing the property is applied to. 
+</dd>
+<dt>rdfs:range</dt>
+<dd>RDFS also defines a property of properties called 'range'; this works just like rdfs:domain, except for the values of a property. If you know the
+range of some property, you know what kinds of thing are reasonable values for it.
+</dd>
+<dt>owl:FunctionalProperty</dt>
+<dd>OWL provides even more useful information about properties, such as the ability to say that a property is 'functional'. This means simply that
+for any particular thing, you can expect at most one value for that property. It is simplest to think of this as 
+contextualised to any given time; although OWL doesn't talk about time explicitly. So we might say that 'age' is functional, even though a series of 
+FOAF documents might be published, each truthfully giving different values for my 'age' which made sense in their original context. At the time of 
+writing, the only W3C technology that can take a larger perspective on such different perspectives / views (or 'graphs') is SPARQL. If you have two 
+different values for a given functional property, you know you have a problem; perhaps one is out-of-date, for example. Or perhaps they only differ in
+trivial detail (eg. date syntax, whitespace). 
+</dd>
+<dt>owl:InverseFunctionalProperty</dt>
+<dd>
+OWL also gives a name for properties where common values tell us something about the identity of the thing having the property. On the Web this
+can be very useful. OWL tells us that two descriptions are of the same thing, if they include truthful mention of some 'inverse functional property'
+that has the same value. The classic FOAF example could be two mentions of a person having some particular foaf:homepage. This OWL construct is very useful for reasoning about identity and merging scattered and partial descriptions.
+</dd>
+
+<dt>owl:inverseOf</dt>
+<dd>OWL provides a property 'inverseOf' that holds between inverse properties; for example, any two things related by foaf:maker are related in 
+the reverse direction by foaf:made.</dd>
+
+<dt>owl:disjointWith</dt>
+<dd>OWL also lets us indicate that two classes have no common members. This can be useful for clarifying modelling assumptions in a language-neutral manner; eg. we might ask whether anything can be both a foaf:Group and a foaf:Organization simultaneously. 
+</dd>
+
+<dt>owl:sameAs</dt>
+<dd>
+OWL provides a term for talking about identity in the sense of "being one and the same thing as". Many FOAF constructs imply 
+that two seemingly different things are in fact mentions of the self-same real world entity; this can be written out explicitly
+using owl:sameAs. For example, if two FOAF descriptions give URI identifiers http://example.com/foo#person1 and http://example.org/bar#person2 in two person-descriptions, but ascribe the same homepage URI, we can conclude that person1 is owl:sameAs person2 (and vice-versa). This construct provides a powerful mechanism for decentralised, <a href="http://www.w3.org/DesignIssues/LinkedData">linked data</a>.
+</dd>
+
+<dt id="term_Concept">skos:Concept</dt>
+<dd>
+	W3C provides a rich framework for describing linked topics, <a href="http://www.w3.org/2004/02/skos/">SKOS</a>. FOAF defines a
+	small extension to SKOS called <a href="#term_focus">foaf:focus</a> designed to link conceptualisations of entities to more 
+	linked data (eg. in FOAF) about the specific thing a SKOS "Concept" is about. 'Concept' is SKOS's fundamental class, and 
+	corresponds to abstractions common in library and cultural heritage information systems, including thesauri and subject indexing schemes. 
+	
+	</dd>
+</dl>
+
+<h3 id="extns_dc">Dublin Core terms</h3>
+
+<p>
+The Dublin Core specification provides term definitions that focus on issues of resource discovery, document description and related concepts useful for
+cultural heritage and digital library applications. FOAF can be used alongside any variants of Dublin Core, but works most effectively with the most 
+modern <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core terms</a> namespace. Note that here we use the prefix 'dct:' to stand for the DC Terms namespace; however 
+it is not unusual to see 'dc' also used.
+</p>
+
+<dl>
+<dt>
+<a id="ext_dct_Agent" href="http://dublincore.org/documents/dcmi-terms/#classes-Agent">dct:Agent</a>
+</dt>
+<dd>
+Dublin Core's notion of Agent is much like FOAF's; Dublin Core says "A resource that acts or has the power to act.", we say "things that do stuff". As nobody has 
+provided a counter-example of something fitting one definition but not the other, we say here that foaf:Agent stands in an 'equivalent class' relationship to dct:Agent (and vice-versa).
+</dd>
+
+<dt>
+<a id="ex_dct_creator" href="http://dublincore.org/documents/dcmi-terms/#terms-creator">dct:creator</a>
+</dt>
+<dd>
+The notion of 'creator' in the latest versions of Dublin Core matches FOAF's notion of 'maker'; based on their definitions, 
+every pair of things that are related by one of those properties are also related by the other. We express this by saying that 
+these properties stand in an 'equivalent property' relationship' to one another. 
+</dd>
+</dl>
+
+
+
+<h3 id="extns_wn">Wordnet terms</h3>
+
+<p>
+Earlier versions of this specification used an experimental companion namespace produced from the lexical database Wordnet (v1.6). This is 
+currently offline, and corresponding sub-class relationships have been ommited from the FOAF documentation. More <a href="http://www.w3.org/TR/wordnet-rdf/">recent</a> RDF representations of Wordnet now exist, however they don't map Wordnet synsets to classes, so can't be directly used here. Future
+versions of this specification might restore links to some version of Wordnet in RDF.
+</p>
+
+<h3 id="extns_sioc">SIOC terms</h3>
+
+<p>
+Many terms in the <a href="http://rdfs.org/sioc/ns#">SIOC</a> vocabulary are defined with reference to FOAF. See the <a href="http://www.sioc-project.org/">SIOC</a> project for details. Future versions of this specification may provide more information here.
+</p>
+
+  <h3 id="sec-ack">Acknowledgments</h3>
+
+  <p>There are far too many people who have contributed to the FOAF
+  project to name everyone in this early-release of the new
+  improved spec. FOAF wouldn't be such a fun project or be as
+  widely known as it is today without the efforts, enthusiasm and
+  intelligence of the folks who have contributed via the <a href=
+  "http://rdfweb.org/pipermail/rdfweb-dev/">rdfweb-dev</a> list,
+  <a href="http://rdfweb.org/irc/">#foaf</a> IRC channel, and
+  <a href="http://wiki.foaf-project.org/FoafProject">FoafProject</a>
+  wiki site.</p>
+
+  <p>That said, a few milestones in FOAF's history should be
+  mentioned. We owe particular thanks to Edd Dumbill for his IBM
+  developerWorks articles (which attracted the affections of the
+  Weblogging crowd) and for his Foafbot application whose evolution
+  those articles have tracked. Also Morten Frederiksen's <a href=
+  "http://xml.mfd-consult.dk/foaf/explorer/">FoafExplorer</a>,
+  Daniel Krech's <a href="http://eikeon.com/foaf/">Web View</a>
+  aggregator, Jim Ley and Liz Turner's work on FOAFNaut, which alongside 
+  FOAFbot, &circ;have been instrumental in showing how FOAF data can be
+  collected and used. Meanwhile Leigh Dodd's <a href=
+  "http://www.ldodds.com/foaf/foaf-a-matic.html">foaf-a-matic</a>
+  has been the data creation tool that has been most people's
+  gateway to FOAFdom. FOAF also owes a lot to the folks at <a href=
+  "http://www.ecademy.com/">Ecademy</a>, <a href=
+  "http://www.typepad.com/">TypePad</a> and elsewhere for showing
+  how end users can share FOAF self-descriptions on the Web without
+  ever seeing a line of XML syntax. Jo Walsh has 
+  enthused <a href=
+  "http://conferences.oreillynet.com/cs/et2003/view/e_sess/3633">many</a>
+  about hooking FOAF up to Geo and mapping data, as has Matt
+  Biddulph by <a href="http://hackdiary.com/">explaining</a> the
+  workings of his FOAF harvesting and image metadata tools. FOAF
+  has also benefited greatly from documentation contributed in
+  non-English languages, many thanks to all contributors of
+  translations (foaf-a-matic and other docs). FOAF is now arguably
+  better documented <a href=
+  "http://kanzaki.com/docs/sw/foaf.html">in Japanese</a> and
+  <a href=
+  "http://f14web.com.ar/inkel/2003/01/27/foaf.html">Spanish</a>
+  than in English, thanks to Masahide Kanzaki and Leandro Mariano
+  Lopez (inkel) respectively. Thanks also to <a href=
+  "http://crschmidt.net/">Chris Schmidt</a> for fixing up
+  the <a href="../0.1/specgen.py">spec generation</a> tool (now a
+  Python/Redland script), as well as for contributing numerous
+  <a href="http://crschmidt.net/semweb/">cool hacks</a> to the FOAF
+  community. To Richard Cyganiak and others in IRC for (amongst much else) help debugging 
+  Apache configurations. To Ian Davis for his wonderful <a href="http://iandavis.com/2006/foaf-icons/">FOAF Logo</a>. And last but not least, Marc Canter is in a class of his own. Thanks all,
+  and to those who aren't listed here yet, but who made a difference...
+</p>
+
+  <p>This brief survey only scratches the surface of a growing body
+  of work. Sincere thanks to all who have contributed tools,
+  documentation, brain cells and enthusiasm to this project. We
+  should also mention that FOAF would not be possible without the
+  collaborative and opensource efforts of the RDF developer
+  community, both in terms of idea sharing (#swig etc) and freely
+  available tools (Jena, Redland, RDFlib, Cwm, Sesame, 3store
+  etc).</p>
+
+  <p>Thanks also to TimBL, who dreamed most of this up <a href="http://www.w3.org/History/1989/proposal.html">years ago</a>, for seeing what "hypertext flexibility" could bring...</p>
+
+<h2 id="sec-changes">Recent Changes</h2>
+
+<h3>Changes in version 0.98</h3>
+
+<ul>
+	<li>"The FOAF RDF namespace" clarified as "The FOAF RDF namespace URI".</li>
+	<li>clarified that RDF/XML now available by conneg and direct link, but not embedded; and that inline RDFa is partial.</li>
+	<li>swapped order of a couple of paragraphs from SOTD section; technical detail comes later now.</li>
+	<li>added sepia (#5E2612) to style.css, for use as 'archaic' background color on old terms.</li>
+	<li>added <a href="#term_focus">foaf:focus</a> "The <code>foaf:focus</code> property relates a conceptualisation of something to the thing itself." We stay quiet for now on whether it is functional, inverse functional, ...</li>
+	<li>added mention of SKOS Concept to index.rdf and to the 'external vocabs' section of the HTML spec.</li>
+	<li>added brief description of owl:sameAs to the 'external vocabs' section.</li>
+	<li>created basic http://wiki.foaf-project.org/w/Conneg and linked from mention in spec of Content negotiation.</li>
+	<li>Added explanatory text alongside 'domain' and 'range', inspired by, and borrowing from, the <a href="http://vocab.org/bio/0.1/.html">Bio vocabulary</a>.</li>
+	<li>removed link to Jim Ley's old SVG image annotation demo, as it isn't maintained.</li>
+	<li>moved large section on FOAF and RDF into the Wiki as <a href="http://wiki.foaf-project.org/w/FOAFandRDF">FOAFandRDF</a>.
+</li>	
+	<li>fixed a mistaken reference to isPrimarySubjectOf (where '...topic' was intended).</li>
+	<li><a href="#term_topic_interest">topic_interest</a>: removed placeholder health warning and added a simple definition</li>
+	<li>index.rdf: From unstable to testing: <a href="#term_Project">Project</a> (we should review DOAP usage and data too), <a href="#term_OnlineAccount">OnlineAccount</a> (should we specify URI as profile page?), <a href="#term_based_near">based_near</a> (time to review AR/POI use cases?), <a href="#term_title">title</a> (vs. honorific prefix?), <a href="#term_skypeID">skypeID</a>, <a href="#term_lastName">lastName</a>, <a href="#term_openid">openid</a>, <a href="#term_account">account</a>, <a href="#term_accountServiceHomepage">accountServiceHomepage</a>, <a href="#term_accountName">accountName</a> (would simple 'name' work?),
+	</li>
+	<li>index.rdf: From unstable to archaic: <a href="#term_dna_checksum">dna_checksum</a> (joke isn't funny any more...)
+	</li>
+	<li>index.rdf: From testing to archaic: <a href="#term_surname">surname</a> (tidying clutter from the early days)</li>
+    <li>index.rdf: From testing to stable: <a href="#term_primaryTopic">primaryTopic</a>/isPrimaryTopicOf, <a href="#term_knows">knows</a> (since these are widely used and definitions haven't changed or been contested)</li>
+	<li>index.rdf: confirmed that <a href="#term_Image">Image</a> is a subClassOf <a href="#term_Document">Document</a></li>
+	<li>index.rdf: removed some false disjointness claims: people can be documents (tatoos); agents can be documents (eg. java software agents)</li>
+	<li>index.rdf: our local label for owl:Thing is now "Thing" not "a Thing" (largely a spec generation detail)</li>
+    <li>index.rdf: broadened <a href="#term_topic_interest">foaf:topic_interest</a> and <a href="#term_interest">foaf:interest</a> to have domain of Agent rather than Person, allowing for collective (group, project, organization) interests.</li>
+    <li>index.rdf: <a href="#term_logo">foaf:logo</a> is an Inverse Functional Property now</li>
+</ul>
+
+<h3>Changes from version <a href="http://xmlns.com/foaf/spec/20100101.html">0.97</a> and <a href="http://xmlns.com/foaf/spec/20091215.html">0.96</a></h3>
+
+	<ul>
+	<li><code><a href="#term_givenName">foaf:givenName</a></code> and <code><a href="#term_familyName">foaf:familyName</a></code> have been changed from <code><a href="#term_givenname">foaf:givenname</a></code> and <code><a href="#term_family_name">foaf:family_name</a></code> to make FOAF in line with usage of these terms in the <a href="http://portablecontacts.net/">Portable Contacts</a> format. The previous versions remain in the document, marked as 'archaic'.</li>
+	<li>Two little-used and poorly defined properties have been marked as 'archaic': <code><a href="#term_fundedBy">foaf:fundedBy</a></code> and <code><a href="#term_theme">foaf:theme</a></code></li>
+	<li><code><a href="#term_holdsAccount">foaf:holdsAccount</a></code> has been marked as 'archaic' in favour of <code><a href="#term_account">foaf:account</a></code></li>
+	</ul>
+
+<p>More details (including postponed suggestions) are <a href="http://wiki.foaf-project.org/w/FoafSpec20100101.html">in the Wiki</a>.</p>
+
+<h3 id="sec-changes20091215">2009-12-15</h3>
+
+<ul>
+<li>terms: foaf:Agent owl:equivalentClass with Dublin Core terms namespace 'Agent'; similarly foaf:maker and 'creator' from DC. These use the most modern http://purl.org/dc/terms/ namespace</li>
+<li>editorial: added note about the use of 'archaic'</li>
+<li>editorial: added a paragraph on changes in this version</li>
+<li>terms: family_name marked as archaic; replaced with familyName</li>
+<li>terms: marked fundedBy as archaic</li>
+<li>terms: marked givenname as archaic; replaced with givenName</li>
+<li>terms: marked holdAccount as archaic; replaced with account</li>
+<li>terms: changed myersBriggs from incorrect objectProperty to datatypeProperty</li>
+<li>terms: added openId into the rdf/xml version (it was present in the dated version but not in index.rdf)</li>
+<li>terms: marked theme as archaic</li>
+<li>editorial: fixed outdated references to RDF/XML</li>
+<li>editorial: updated acknowledgements</li>
+<li>terms: added text about terms used in foaf not in the foaf namespace</li>
+<li>editorial: fixed links and stray references to rdfweb-dev and #rdfig </li>
+<li>editorial: fixed rdfweb.org blog links (now pointing at archive.org where possible)</li>
+<li>editorial: fixed links to the wiki (stray /w/)</li>
+<li>editorial: fixed internal link to sec-glance</li>
+<li>editorial: fixed copyright date to 2009</li>
+
+</ul>
+
+<h3 id="sec-changes20071102">2007-11-02</h3>
+
+<ul>
+<li>terms: added <a href="#term_openid">foaf:openid</a></li>
+<li>editorial: updated links to the <a href="http://wiki.foaf-project.org/w/FoafProject">FOAF wiki</a> (which now supports OpenID for logins)</li>
+<li>editorial: spec now uses RDFa DTD declaration.</li>
+</ul>
+<h3 id="sec-changes20070524">2007-05-24</h3>
+<ul>
+<li>terms: Organization, Group, member, made, maker are now stable.</li>
+
+<li>editorial: Table of contents represents actual rather than desired structure. links fixed.</li>
+<li>process: Clarified that the specification version and URL are not 0.1; publishing at /foaf/spec</li>
+<li>editorial: Noted that the namespace URI will not change. Given the spec a version (0.9)</li>
+<li>editorial: CSS tweaks (grey boxes for terms), margins, justification</li>
+<li>editorial: Removed various TODOs and editorial comments</li>
+<li>editorial: Updated text for Organization to indicate relationship with Group</li>
+<li>web: Web server configuration now serves 303 redirects for terms, and RDF at the namespace URI if application/rdf+xml 
+requested</li>
+<li>editorial: Updated mentions of rdfig to be swig, rdfweb-dev to be foaf-dev; fixed links accordingly</li>
+<li>editorial: Removed link to validator, since we have RDF inside and the dtd-based
+validator doesn't like mixed-namespace documents.</li>
+
+<li>web: created /foaf/spec for specification documents (and archive)</li>
+<li>editorial: Re-organized boilerplate section slightly (spec has url for current version).</li>
+<li>editorial: Updated per-term documentation to link to <a href="http://wiki.foaf-project.org/w/IssueTracker">wiki issue tracker</a> 
+instead of the old bugzilla installation.</li>
+<li>editorial: Updated foaf:Group documentation to mention possiblility of SPARQL</li>
+<li>editorial: Updated foaf:name documentation to mention possibility of XMLLiteral datatyped values</li>
+<li>editorial: Fixed or removed various bad links (ichat, python, internal links)</li>
+<li>editorial: Reworded copyright statement to clarify intent; we used to say "and does not apply to FOAF data formats, vocabulary 
+terms, or technology.", which gave impression we were holding stuff back. Rather, this is just our understanding of copyright. The 
+underlying technology part is completely supplied by W3C's specifications.</li>
+
+<li>web: added "rel='alternate'" to document header to aid RDF discovery</li>
+</ul>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

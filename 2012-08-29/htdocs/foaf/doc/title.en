@@ -1,0 +1,10 @@
+<p class="editorial">
+This property is a candidate for deprecation in favour of 'honorificPrefix' following Portable Contacts usage. See the <a href="http://wiki.foaf-project.org/w/IssueTracker">FOAF Issue Tracker</a>.
+</p>
+
+<p>
+The approriate values for <code>foaf:title</code> are not formally constrained, and will 
+vary across community and context. Values such as 'Mr', 'Mrs', 'Ms', 'Dr' etc. are 
+expected.
+</p>
+

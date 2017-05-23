@@ -1,0 +1,15 @@
+<p>
+The <code>foaf:OnlineAccount</code> class represents the provision of some form of online 
+service, by some party (indicated indirectly via a <code>foaf:accountServiceHomepage</code>) to some <code>foaf:Agent</code>. The 
+<code>foaf:account</code> property of the agent is used to indicate accounts that are associated with the agent.
+</p>
+
+<p>
+See <code>foaf:OnlineChatAccount</code> for an example. Other sub-classes include <code>foaf:OnlineEcommerceAccount</code> and <code>foaf:OnlineGamingAccount</code>.
+</p>
+
+<p>
+One deployment style for this construct is to use URIs for well-known documents (or other entities) that strongly embody the account-holding relationship; for 
+example, user profile pages on social network sites. This has the advantage of providing URIs that are likely to be easy to link with other information,
+but means that the instances of this class should not be considered 'accounts' in the abstract or business sense of a 'contract'.
+</p>

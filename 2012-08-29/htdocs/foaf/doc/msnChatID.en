@@ -1,0 +1,10 @@
+<p>
+The <code>foaf:msnChatID</code> property relates a <code>foaf:Agent</code> to a textual 
+identifier assigned to them in the Microsoft online chat system originally known as 'MSN', and now 
+<a href="http://en.wikipedia.org/wiki/Windows_Live_Messenger">Windows Live Messenger</a>.
+See the <a href="http://download.live.com/messenger">Microsoft mesenger</a> and <a href="http://en.wikipedia.org/wiki/Windows_Live_ID">Windows Live ID</a> sites for more details.
+</p>
+
+<p>See <code>foaf:OnlineChatAccount</code> (and <code>foaf:OnlineAccount</code>) for a 
+more general (and verbose) mechanism for describing IM and chat accounts. 
+</p>

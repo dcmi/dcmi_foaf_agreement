@@ -1,0 +1,16 @@
+<p>
+The <code>foaf:givenName</code> property is provided (alongside <code>foaf:familyName</code>) for use when describing parts of people's names. Although these
+concepts do not capture the full range of personal naming styles found world-wide, they are commonly used and have some value. 
+</p>
+<p>
+There is also a simple <code>foaf:name</code> property.
+</p>
+
+<p>
+Support is also provided for the more archaic and culturally varying terminology of <code>foaf:firstName</code> and <code>foaf:lastName</code>.
+</p>
+
+<p>
+See the <a href="http://wiki.foaf-project.org/w/NameVocabIssue">issue tracker</a> for design discussions, status and ongoing work on rationalising the FOAF
+naming machinery.
+</p>

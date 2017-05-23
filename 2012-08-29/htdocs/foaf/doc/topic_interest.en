@@ -1,0 +1,4 @@
+<p>
+The <code>foaf:topic_interest</code> property links a <code>foaf:Agent</code> to a thing that they're interested in. 
+Unlike <code>foaf:topic</code> it is not indirected through a document, but links the thing directly.
+</p>

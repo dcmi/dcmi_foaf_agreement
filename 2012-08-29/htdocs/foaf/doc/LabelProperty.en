@@ -1,0 +1,9 @@
+<p>
+A <code>foaf:LabelProperty</code> is any RDF property with texual values that serve as labels.
+</p>
+
+<p>
+Any property that is a <code>foaf:LabelProperty</code> is effectively a sub-property of rdfs:label. This utility
+class provides an alternate means of expressing this idea, in a way that may help with OWL 2.0 DL compatibility.
+</p>
+

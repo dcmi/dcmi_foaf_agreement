@@ -1,0 +1,14 @@
+<p class="editorial">
+This property is considered <em>archaic usage</em>. It is generally better to use <code>foaf:account</code> instead.
+</p>
+
+<p>
+The <code>foaf:holdsAccount</code> property relates a <code>foaf:Agent</code> to an 
+<code>foaf:OnlineAccount</code> for which they are the sole account holder. See 
+<code>foaf:OnlineAccount</code> for usage details.
+</p>
+<p>
+This property is equivalent to the <code>foaf:account</code> property, which 
+was introduced primarily to provide simpler naming for the same idea.
+</p>
+

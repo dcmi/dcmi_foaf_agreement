@@ -1,0 +1,16 @@
+<p>
+The <code>foaf:follows</code> property relates a <code>foaf:Agent</code> to another 
+<code>foaf:Agent</code> whose activities they (in some sense) follow.
+</p>
+
+<p>
+The <code>foaf:follows</code> relationship does not imply complete information flow
+between parties, and should not be taken as evidence that any agent will 
+necessarily be aware of some particular activity. Typical use is to indicate 
+subscription or follows within Web based services such as social networks, microblogs
+life-streaming and news syndication services.
+</p>
+
+<p>This property is neither function, inverse-functional, nor symmetric.</p>
+
+<!-- See http://chatlogs.planetrdf.com/swig/2011-01-07#T12-12-45 -->

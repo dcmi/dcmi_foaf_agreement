@@ -1,0 +1,29 @@
+AddType  application/rdf+xml rdf
+RewriteEngine on 
+#RewriteRule (.*) http://xmlns.com/wot/0.1/ [R=303,L]
+
+RewriteCond  %{HTTP_ACCEPT} .*text/html.*
+
+# Properties: | assurance | encryptedTo | encrypter | fingerprint | hasKey | hex_id | identity | length | pubkeyAddress | sigdate | signed | signer | sigtime | 
+
+Redirect 303 /wot/0.1/fingerprint http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/assurance http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/encryptedTo http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/encrypter http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/hasKey http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/hex_id http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/identity http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/length http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/pubKeyAddress http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/sigdate http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/signed http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/signer http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/sigtime http://xmlns.com/wot/0.1/
+
+# Classes: | EncryptedDocument | Endorsement | PubKey | SigEvent | User | 
+
+Redirect 303 /wot/0.1/EncryptedDocument http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/Endorsement http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/PubKey http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/SigEvent http://xmlns.com/wot/0.1/
+Redirect 303 /wot/0.1/User http://xmlns.com/wot/0.1/

@@ -1,0 +1,21 @@
+Todo list:
+
+No detailed documentation for term 'jabberID'
+No detailed documentation for term 'yahooChatID'
+No detailed documentation for term 'aimChatID'
+No detailed documentation for term 'plan'
+No detailed documentation for term 'workplaceHomepage'
+No detailed documentation for term 'workInfoHomepage'
+No detailed documentation for term 'topic_interest'
+No detailed documentation for term 'sha1'
+No detailed documentation for term 'msnChatID'
+No detailed documentation for term 'icqChatID'
+No detailed documentation for term 'publications'
+No detailed documentation for term 'linkedWith'
+No detailed documentation for term 'fundedBy'
+No detailed documentation for term 'phone'
+No detailed documentation for term 'geekcode'
+No detailed documentation for term 'Project'
+No detailed documentation for term 'Document'
+No detailed documentation for term 'Organization'
+

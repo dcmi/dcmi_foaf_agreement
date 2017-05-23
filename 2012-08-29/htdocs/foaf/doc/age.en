@@ -1,0 +1,6 @@
+<p>
+The <code>foaf:age</code> property is a relationship between a <code>foaf:Agent</code> 
+and an integer string representing their age in years. See also <code>foaf:birthday</code>. 
+</p>
+
+

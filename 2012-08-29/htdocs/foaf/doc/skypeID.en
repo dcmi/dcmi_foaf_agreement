@@ -1,0 +1,10 @@
+<p>
+The <code>foaf:skype</code> property relates a <code>foaf:Agent</code> to an account name of 
+a Skype account of theirs.
+</p>
+
+<p>
+See <code>foaf:OnlineChatAccount</code> (and <code>foaf:OnlineAccount</code>) for a
+more general (and verbose) mechanism for describing IM and chat accounts.
+</p>
+

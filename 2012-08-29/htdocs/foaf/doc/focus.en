@@ -1,0 +1,25 @@
+<p>
+The <code>foaf:focus</code> property relates a conceptualisation of something to the thing itself.
+Specifically, it is designed for use with W3C's <a href="http://www.w3.org/2004/02/skos/">SKOS</a> 
+vocabulary, to help indicate specific individual things (typically people, places, artifacts) 
+that are mentioned in different SKOS schemes (eg. thesauri).
+</p>
+
+<p>
+W3C SKOS is based around collections of linked 'concepts', which indicate topics, subject areas and categories. 
+<a href="http://www.w3.org/TR/2005/WD-swbp-skos-core-guide-20050510/#secmodellingrdf">In SKOS</a>,
+properties of a skos:Concept are properties of the conceptualization (see <a href="http://www.w3.org/TR/2005/WD-swbp-skos-core-guide-20051102/#secopen">2005 discussion</a> for details); 
+for example administrative and record-keeping metadata. Two schemes might have an entry for the same individual; the foaf:focus property
+can be used to indicate the thing in they world that they both focus on. Many SKOS concepts don't work this way; 
+broad topical areas and subject categories don't typically correspond to some particular entity. However, in cases
+when they do, it is useful to link both subject-oriented and thing-oriented information via foaf:focus.
+</p>
+
+<p>
+FOAF's focus property works alongside its other topic-oriented constructs: <code>foaf:topic</code>, <code>foaf:primaryTopic</code> 
+are used when talking about the topical emphasis of a document. The notion of <code>foaf:primaryTopic</code> 
+is particularly important in FOAF as it provides an indirect mechanism for identifying things indirectly. A
+similar approach is explored by the <a href="http://larry.masinter.net/duri.html">TDB URI scheme</a>. FOAF includes topic-oriented 
+functionality to address its <a href="http://www.foaf-project.org/original-intro">original goals</a> of linking people to information,
+as well as to other people, through the use of linked information.
+</p>
