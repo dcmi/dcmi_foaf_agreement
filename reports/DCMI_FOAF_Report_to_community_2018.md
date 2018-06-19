@@ -42,12 +42,14 @@ The status of specific agreements is reported below.
 ----------------------------------------------------------------------
 "The FOAF Project will provide public notice of impending semantic changes in the FOAF vocabulary."
 
-* The [current version of FOAF](http://xmlns/spec) is Version 0.99,
+* The [current version of FOAF](http://xmlns.com/foaf/spec/) is Version 0.99,
   "Paddington". A "1.0" release has been discussed on foaf-dev but no dates
   have been set.  Dan's work on schema.org may motivate a larger effort towards
   convergence of person-related structured data vocabularies, but there is
   nothing concrete to report at this stage.
-
+  * Ongoing/continued ("no tangible progress"), as of 2018-06-19
+  * Given a widespread move to HTTPS, an update to the Web server to provide availability via HTTPS is planned.
+   * No plans to change namespace URLs to HTTPS (or remove "0.1" etc.)
 ----------------------------------------------------------------------
 "DCMI will mirror the FOAF Subversion project."
 
@@ -67,20 +69,21 @@ The status of specific agreements is reported below.
 > of our work.
 
 * DCMI has forked the repository to
-  [ https://github.com/dcmi/foaf ](https://github.com/dcmi/foaf).
+  [ https://github.com/dcmi/foaf](https://github.com/dcmi/foaf).
 
 * Dan wants to fix some issues with the migration of versioning information so
   has asked us to keep our snapshots of the Subversion repo.  These are
   archived in [a Github repo](https://github.com/dcmi/dcmi_foaf_agreement/tree/master/backups).
   The Github repo uses [Github Large File Support](https://git-lfs.github.com)
   for all files with the extension `.gz`.
-
+  * Ongoing/continued ("no tangible progress"), as of 2018-06-19
+  * 
 ----------------------------------------------------------------------
 "DCMI will monitor for outages in availability of the FOAF vocabulary and make
 a mirrored copy available if required."
 
 * Tom occasionally pings the FOAF vocabulary spec http://xmlns.com/foaf/spec/
-
+ * No known significant outages. Hosting continues at Amazon AWS.
 * TO DO: Ideally, we should find a way to automate the monitoring of downtime,
   maybe even logging the results.
 
