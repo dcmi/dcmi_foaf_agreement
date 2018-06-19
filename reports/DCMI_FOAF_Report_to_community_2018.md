@@ -1,6 +1,8 @@
 DCMI FOAF Agreement: 2018 status update
 
-https://github.com/dcmi/dcmi_foaf_agreement/blob/master/reports/DCMI_FOAF_Report_to_community_2018.md
+URL: https://github.com/dcmi/dcmi_foaf_agreement/blob/master/reports/DCMI_FOAF_Report_to_community_2018.md
+See also [2018 update](../blob/master/reports/DCMI_FOAF_Report_to_community_2018.md)
+
 
 Tom Baker and Dan Brickley
 
