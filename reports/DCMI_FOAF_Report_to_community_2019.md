@@ -49,7 +49,7 @@ The status of specific agreements is reported below.
   have been set.  Dan's work on schema.org may motivate a larger effort towards
   convergence of person-related structured data vocabularies, but there is
   nothing concrete to report at this stage.
-  * Ongoing/continued ("no tangible progress"), as of 2018-06-19
+  * Ongoing/continued ("no tangible progress"), as of 2019-04-02
   * Given a widespread move to HTTPS, an update to the Web server to provide availability via HTTPS is planned.
    * No plans to change namespace URLs to HTTPS (or remove "0.1" etc.)
 
@@ -57,7 +57,7 @@ The status of specific agreements is reported below.
 "DCMI will mirror the FOAF Subversion project."
 
 * FOAF was copied from http://svn.foaf-project.org/foaf/ to
-  https://github.com/foaf/foaf.  As of July 2017, the website explains:
+  https://github.com/foaf/foaf .  Since July 2017, the website explains:
 
 > This is a 2015 reflection of the main FOAF project Subversion repository into
 > Github.
@@ -71,8 +71,8 @@ The status of specific agreements is reported below.
 > 100% validated as fully representing the full history and most recent edits
 > of our work.
 
-* DCMI has forked the repository to
-  [ https://github.com/dcmi/foaf](https://github.com/dcmi/foaf).
+* DCMI has forked the https://github.com/foaf/foaf repository to
+  [https://github.com/dcmi/foaf](https://github.com/dcmi/foaf).
 
 * Dan wants to fix some issues with the migration of versioning information so
   has asked us to keep our snapshots of the Subversion repo.  These are
@@ -80,7 +80,7 @@ The status of specific agreements is reported below.
   The Github repo uses [Github Large File Support](https://git-lfs.github.com)
   for all files with the extension `.gz`.
   * Ongoing/continued ("no tangible progress"), as of 2018-06-19
-  * 
+
 ----------------------------------------------------------------------
 "DCMI will monitor for outages in availability of the FOAF vocabulary and make
 a mirrored copy available if required."
