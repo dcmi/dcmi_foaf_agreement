@@ -11,18 +11,11 @@ Tom Baker and Dan Brickley
 ----------------------------------------------------------------------
 Context 
 
-The DCMI FOAF Cooperation Task Group [1] is a result of the May 2011 Agreement
-between DCMI and the FOAF Project [2].  The Task Group implements and monitors
-the specific agreements [3] outlined in the DCMI FOAF Agreement. As of 2014, this
-Task Group falls under the DCMI Technical Board [4].
+The [DCMI FOAF Cooperation Task Group](http://wiki.dublincore.org/index.php/DCMI_FOAF_Cooperation) is a result of a [May 2011 Agreement between DCMI and the FOAF Project](http://dublincore.org/documents/dcmi-foaf/).  The Task Group implements and monitors
+the [specific agreements](http://wiki.dublincore.org/index.php/DCMI_FOAF_Cooperation/Specific_Agreements) outlined in the DCMI FOAF Agreement.
 
-The agreement is renewed annually with a report to the community (this text).
+The agreement is renewed annually with a [report to the community]
 The status of specific agreements is reported below.
-
-[1] http://wiki.dublincore.org/index.php/DCMI_FOAF_Cooperation <br>
-[2] http://dublincore.org/documents/dcmi-foaf/  <br>
-[3] http://wiki.dublincore.org/index.php/DCMI_FOAF_Cooperation/Specific_Agreements <br>
-[4] http://wiki.dublincore.org/index.php/DCMI_Technical_Board <br>
 
 ----------------------------------------------------------------------
 "Collaboration will be re-evaluated and re-affirmed annually."
@@ -85,8 +78,9 @@ The status of specific agreements is reported below.
 "DCMI will monitor for outages in availability of the FOAF vocabulary and make
 a mirrored copy available if required."
 
-* Tom occasionally pings the FOAF vocabulary spec http://xmlns.com/foaf/spec/
- * No known significant outages. Hosting continues at Amazon AWS.
-* TO DO: Ideally, we should find a way to automate the monitoring of downtime,
-  maybe even logging the results.
+* DCMI monitors the availablility of the [FOAF specification](http://xmlns.com/foaf/spec/) and 
+  [namespace document](http://xmlns.com/foaf/0.1/) using 
+  [Uptime Robot](https://stats.uptimerobot.com/mEWkmuXlB).
+
+* There have been no known significant outages. Hosting continues at Amazon AWS.
 
