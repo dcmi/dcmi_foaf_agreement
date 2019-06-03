@@ -64,7 +64,8 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
   [https://github.com/dcmi/foaf](https://github.com/dcmi/foaf).
 
 * Dan wants to fix some issues with the migration of versioning information so has asked DCMI to keep its snapshots of the Subversion repo.  These are archived in [a Github repo](https://github.com/dcmi/dcmi_foaf_agreement/tree/master/backups).  The Github repo uses [Github Large File Support](https://git-lfs.github.com) for all files with the extension `.gz`.
-  * Ongoing/continued ("no tangible progress"), as of @@@@
+
+* With no tangible progress in the past year, this action is carried forward.
 
 ----------------------------------------------------------------------
 "DCMI will monitor for outages in availability of the FOAF vocabulary and make
