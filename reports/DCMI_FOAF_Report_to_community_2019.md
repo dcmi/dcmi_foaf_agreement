@@ -38,7 +38,6 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
   have been set.  Dan's work on schema.org may motivate a larger effort towards
   convergence of person-related structured data vocabularies, but there is
   nothing concrete to report at this stage.
-  * Ongoing/continued ("no tangible progress"), as of @@@@
   * Given a widespread move to HTTPS, an update to the Web server to provide availability via HTTPS is planned.
    * No plans to change namespace URLs to HTTPS (or remove "0.1" etc.)
 
