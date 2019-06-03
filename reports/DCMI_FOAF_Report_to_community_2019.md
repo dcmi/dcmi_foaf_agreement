@@ -22,7 +22,7 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
 "The FOAF Project will grant DCMI administrative and technical access to the domain xmlns.com."
 
 * Dan Brickley, Libby Miller, Tom Baker, and Paul Walk currently have the DNS password
-* The password is stored in a password vault shared by DCMI managing director Paul Walk and assistant director Tom Baker
+* The password, stored in a password vault shared by DCMI managing director Paul Walk and assistant director Tom Baker, was recently verified.
 
 ----------------------------------------------------------------------
 "DCMI will monitor payment of domain name fees by the FOAF Project."
