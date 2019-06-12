@@ -20,7 +20,7 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
 "The FOAF Project will grant DCMI administrative and technical access to the domain xmlns.com."
 
 * Dan Brickley, Libby Miller, Tom Baker, and Paul Walk currently have the DNS password
-* The password is stored in a password vault shared by DCMI managing director Paul Walk and assistant director Tom Baker
+* The password, stored in a password vault shared by DCMI managing director Paul Walk and assistant director Tom Baker, was recently verified.
 
 ----------------------------------------------------------------------
 "DCMI will monitor payment of domain name fees by the FOAF Project."
@@ -36,7 +36,6 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
   have been set.  Dan's work on schema.org may motivate a larger effort towards
   convergence of person-related structured data vocabularies, but there is
   nothing concrete to report at this stage.
-  * Ongoing/continued ("no tangible progress"), as of @@@@
   * Given a widespread move to HTTPS, an update to the Web server to provide availability via HTTPS is planned.
    * No plans to change namespace URLs to HTTPS (or remove "0.1" etc.)
 
@@ -62,7 +61,8 @@ The [DCMI FOAF Cooperation Task Group](http://www.dublincore.org/collaborations/
   [https://github.com/dcmi/foaf](https://github.com/dcmi/foaf).
 
 * Dan wants to fix some issues with the migration of versioning information so has asked DCMI to keep its snapshots of the Subversion repo.  These are archived in [a Github repo](https://github.com/dcmi/dcmi_foaf_agreement/tree/master/backups).  The Github repo uses [Github Large File Support](https://git-lfs.github.com) for all files with the extension `.gz`.
-  * Ongoing/continued ("no tangible progress"), as of @@@@
+
+* With no tangible progress in the past year, this action is carried forward.
 
 ----------------------------------------------------------------------
 "DCMI will monitor for outages in availability of the FOAF vocabulary and make
