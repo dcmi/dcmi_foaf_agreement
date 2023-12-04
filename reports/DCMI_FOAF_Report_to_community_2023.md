@@ -1,6 +1,6 @@
-## DCMI FOAF Agreement: 2021 update (__DRAFT__)
+## DCMI FOAF Agreement: 2023 update (__DRAFT__)
 
-* URL: https://github.com/dcmi/dcmi_foaf_agreement/blob/master/reports/DCMI_FOAF_Report_to_community_2021.md
+* URL: https://github.com/dcmi/dcmi_foaf_agreement/blob/master/reports/DCMI_FOAF_Report_to_community_2023.md
 
 
 Tom Baker and Dan Brickley
